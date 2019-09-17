@@ -118,11 +118,13 @@ df_policies_1.describe().show()
 
 
 #%%
-df_claims_out = df_claims.filter(df_claims.state == "NY").collect()
-df_policies_1_out = df_policies_1.filter(df_policies_1.state == "NY").collect()
+df_claims_out = df_claims.filter(df_claims.state == "NY")
+df_policies_1_out = df_policies_1.filter(df_policies_1.propertystate == "NY")
 
-claims_out_path = "claims.csv"
-policy_out_path = "policies.csv"
+#claims_out_path = "C:\\Users\\Jared\\OneDrive\\Documents\\GitHub\\nfip_data_prep\\claims.csv"
+#policy_out_path = "C:\\Users\\Jared\\OneDrive\\Documents\\GitHub\\nfip_data_prep\\policies.csv"
+claims_out_path = 'claims.csv'
+policy_out_path = 'policy.csv'
 
 df_claims_out.write.save(claims_out_path, format="csv", header=True)
 df_policies_1_out.write.save(policy_out_path, format="csv", header=True)
@@ -130,3 +132,9 @@ df_policies_1_out.write.save(policy_out_path, format="csv", header=True)
 
 
 
+
+
+#%%
+df_policies_1_out.take(1)
+
+#%%
