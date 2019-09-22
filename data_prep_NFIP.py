@@ -26,7 +26,7 @@ from pyspark import SparkContext, SparkConf
 
 
 #%%
-spark = SparkSession     .builder     .appName("NFIP Dataset")     .getOrCreate()
+spark = SparkSession.builder.appName("NFIP Dataset")     .getOrCreate()
 
 #%% [markdown]
 # Let's check if the change went through
