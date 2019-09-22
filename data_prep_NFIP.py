@@ -9,6 +9,7 @@
 # 
 # First let's import SparkConf and SparkSession
 
+
 #%%
 import pyspark
 from pyspark import SparkConf
@@ -83,8 +84,6 @@ for f in files:
 claims_path = [filename for filename in files if filename.endswith("openFEMA_claims20190531.csv")]
 df_claims = spark.read.format("csv").option("header","true").option("mode","DROPMALFORMED").load(claims_path[0])
 
-
-#%%
 df_claims.printSchema() 
 
 
@@ -92,8 +91,12 @@ df_claims.printSchema()
 #%% 
 
 policies_path = [filename for filename in files if not filename.endswith("openFEMA_claims20190531.csv")]
-df_policies_1 = spark.read.format("csv").option("header","true").option("mode","DROPMALFORMED").load(policies_path[0])
+df_policies_1 = spark.read.format("csv").option("header","true").option("mode", "DROPMALFORMED").load(policies_path[0])
 
+df_policies_1.printSchema() 
+
+
+#%% 
 
 for policies in policies_path[1:]:
     df_policies = spark.read.format("csv").option("header","true").option("mode","DROPMALFORMED").load(policies) 
@@ -119,22 +122,23 @@ df_policies_1.describe().show()
 
 #%%
 df_claims_out = df_claims.filter(df_claims.state == "NY")
-df_policies_1_out = df_policies_1.filter(df_policies_1.propertystate == "NY")
-
-#claims_out_path = "C:\\Users\\Jared\\OneDrive\\Documents\\GitHub\\nfip_data_prep\\claims.csv"
-#policy_out_path = "C:\\Users\\Jared\\OneDrive\\Documents\\GitHub\\nfip_data_prep\\policies.csv"
-claims_out_path = 'claims.csv'
-policy_out_path = 'policy.csv'
-
-df_claims_out.write.save(claims_out_path, format="csv", header=True)
-df_policies_1_out.write.save(policy_out_path, format="csv", header=True)
-
-
-
+df_claims_out.take(1)
 
 
 
 #%%
+df_policies_1_out = df_policies_1.filter(df_policies_1.propertystate == "NY")
 df_policies_1_out.take(1)
+
+
+
+#%%
+df_claims_out.toPandas().to_csv('claims.csv')
+
+
+#%%
+df_policies_1_out.toPandas().to_csv('policies.csv')
+
+
 
 #%%
