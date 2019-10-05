@@ -1,13 +1,34 @@
 # Spark Capstone Project: Flood Claims Analysis (NFIP Claims and Policy Datasets)
 *This analysis is part of the Udacity Data Science Nanodegree and is no reflection of my current employer*
 
-## Purpose
+## Project Overview
 
-## How run the analysis
+This project analyses the NFIP claims and policy datasets, using spark. The aim of the project is to utilise/analyse spark to handle the large dataset released by the NFIP and to produce loss cost model of the claims in a specific region. To allow us to be able to better predict the estimated minimum premium an insurer should charge for specific policies. 
 
-1. Run the get_data_script.py file
+## Problem Statement
+
+
+## Metrics
+
+
+## Analysis
+
+
+## Methodology
+
+
+## Results
+
+
+## Conclusions
+
+
+
+# How run the analysis
+
+1. Run the get_data_script.py file (this will take awhile)
     1. pass arguement for the path of where to download the zip to
-    2. for example: get_data_script.py 
+    2. for example: get_data_script.py "C:/Users/jmagr/Downloads/policy/" 
 2. Run the unzip_csvs.py file
     1. pass argument for the path of where the zips are located and the output folder
     2. for example: unzip_csvs.py 
@@ -18,6 +39,15 @@
 5. Run the analysis.py file
     1. 
 
+## Useful links
+
+[Claims GLM Spark](http://people.stat.sc.edu/haigang/GLM_in_spark.html)
+[NFIP Policy Data Dictonary](https://www.nap.edu/read/21848/chapter/5#51)
+[NFIP Policy data](https://www.fema.gov/media-library/assets/documents/180376)
+[NFIP Claims data](https://www.fema.gov/media-library/assets/documents/180374)
+
+
+# Understanding the data
 
 ## THE NFIP POLICY DATABASE
 
