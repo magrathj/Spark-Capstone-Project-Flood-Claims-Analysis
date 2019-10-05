@@ -52,6 +52,6 @@ def main(argv):
     print("------completed-----------")
 
 
-## Example: get_data_script.py "C:/Users/jmagr/Downloads/policy/"
+## Example: python get_data_script.py "C:/Users/jmagr/Downloads/policy/"
 if __name__ == "__main__":
    main(sys.argv[1:])

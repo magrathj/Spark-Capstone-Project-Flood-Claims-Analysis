@@ -14,7 +14,7 @@
 import pyspark
 from pyspark import SparkConf
 from pyspark.sql import SparkSession
-import requests, zipfile, io, os
+import zipfile, io, os
 import pandas as pd 
 from pyspark import SparkContext, SparkConf
 
@@ -26,7 +26,7 @@ from pyspark import SparkContext, SparkConf
 
 
 #%%
-spark = SparkSession.builder.appName("NFIP Dataset")     .getOrCreate()
+spark = SparkSession.builder.appName("NFIP Dataset").getOrCreate()
 
 #%% [markdown]
 # Let's check if the change went through
@@ -39,24 +39,6 @@ spark.sparkContext.getConf().getAll()
 spark
 
 
-#%% [markdown]
-# Let's download the datasets...this could take sometime
-
-#%% 
-
-all_zip_file_urls = [
-                     'https://www.fema.gov/media-library-data/1566235780855-42d2142c3b1c2520a205192774268f84/openFEMA_policies20190531_1.zip',
-                     'https://www.fema.gov/media-library-data/1566235780855-42d2142c3b1c2520a205192774268f84/openFEMA_policies20190531_2.zip',
-                     'https://www.fema.gov/media-library-data/1566235780855-42d2142c3b1c2520a205192774268f84/openFEMA_policies20190531_3.zip',
-                     'https://www.fema.gov/media-library-data/1566235431170-4120327dea121daff89b8ec3da22b832/openFEMA_policies20190531_4.zip',
-                     'https://www.fema.gov/media-library-data/1566235780855-42d2142c3b1c2520a205192774268f84/openFEMA_policies20190531_5.zip'
-                    ]
-
-for zip_file_url in all_zip_file_urls:
-    r = requests.get(zip_file_url)
-    z = zipfile.ZipFile(io.BytesIO(r.content))
-    z.extractall()
-
 
 
 #%% [markdown]
@@ -66,7 +48,7 @@ for zip_file_url in all_zip_file_urls:
 
 import glob
 
-path = 'C:\\Users\\Jared\\OneDrive\\Documents\\GitHub\\nfip_data_prep'
+path = 'C:\\Users\\jmagr\\Downloads\\policy_output'
 files = [f for f in glob.glob(path + "**/*.csv", recursive=True)]
 
 for f in files:

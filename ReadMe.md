@@ -28,13 +28,13 @@ This project analyses the NFIP claims and policy datasets, using spark. The aim 
 
 1. Run the get_data_script.py file (this will take awhile)
     1. pass arguement for the path of where to download the zip to
-    2. for example: get_data_script.py "C:/Users/jmagr/Downloads/policy/" 
+    2. for example: python get_data_script.py "C:/Users/jmagr/Downloads/policy/" 
 2. Run the unzip_csvs.py file
     1. pass argument for the path of where the zips are located and the output folder
-    2. for example: unzip_csvs.py 
+    2. for example: python unzip_csvs.py 
 3. Run the data_prep_script.py file
     1. pass arguement for the State you want to filter the datasets for
-    2. for example: data_prep_script.py NY
+    2. for example: python data_prep_script.py NY
 4. Take the outputted files and upload them to databricks - claims and policies
 5. Run the analysis.py file
     1. 
