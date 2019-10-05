@@ -1,5 +1,22 @@
-# Flood Claims Analysis - NFIP Claims and Policy Datasets
+# Spark Capstone Project: Flood Claims Analysis (NFIP Claims and Policy Datasets)
+*This analysis is part of the Udacity Data Science Nanodegree and is no reflection of my current employer*
 
+## Purpose
+
+## How run the analysis
+
+1. Run the get_data_script.py file
+    1. pass arguement for the path of where to download the zip to
+    2. for example: get_data_script.py 
+2. Run the unzip_csvs.py file
+    1. pass argument for the path of where the zips are located and the output folder
+    2. for example: unzip_csvs.py 
+3. Run the data_prep_script.py file
+    1. pass arguement for the State you want to filter the datasets for
+    2. for example: data_prep_script.py NY
+4. Take the outputted files and upload them to databricks - claims and policies
+5. Run the analysis.py file
+    1. 
 
 
 ## THE NFIP POLICY DATABASE
@@ -11,7 +28,6 @@
 * Dwelling forms are used for homeowners, residential renters, or owners of residential buildings that contain one to four units.
 General property forms are used for owners of residential buildings with five or more units, as well as for owners or lessees of nonresidential buildings or units.
 * Lastly, residential condo building association forms are provided to residential condo associations on behalf of the association and their unit owners (FEMA, 2014).
-* The review of the NFIP policy database for this report was based on a snapshot of the NFIP policy data from October 2013.3 The October 2013 NFIP policy database includes the following information and attributes as categorized below.
 
 
 * NFIP tracks policies by the individual, rather than by the property, unique policy numbers are assigned to each policyholder and property holder. When a policyholder moves, a new policy number is assigned. Some aspects of the policy are protected by FEMA under privacy concerns, such as names and addresses, and are not available to the public. Other general policy information within the NFIP policy database includes
