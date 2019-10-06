@@ -45,7 +45,7 @@ This project analyses the NFIP claims and policy datasets, using spark. The aim 
 [NFIP Policy Data Dictonary](https://www.nap.edu/read/21848/chapter/5#51)
 [NFIP Policy data](https://www.fema.gov/media-library/assets/documents/180376)
 [NFIP Claims data](https://www.fema.gov/media-library/assets/documents/180374)
-
+[Read Me shortcuts](https://github.com/tchapi/markdown-cheatsheet/blob/master/README.md)
 
 # Understanding the data
 
