@@ -28,6 +28,9 @@ from pyspark import SparkContext, SparkConf
 #%%
 spark = SparkSession.builder.appName("NFIP Dataset").getOrCreate()
 
+#%%
+spark.conf.set("spark.sql.execution.arrow.enabled", "true")
+
 #%% [markdown]
 # Let's check if the change went through
 
@@ -155,3 +158,7 @@ print(df.take(1))
 
 
 #%%
+df.toPandas().to_csv('policy_info.csv')
+
+#%%
+df.to_csv('policies.csv')
