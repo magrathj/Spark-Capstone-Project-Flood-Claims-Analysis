@@ -3,27 +3,50 @@
 
 ## Project Overview
 
-This project analyses the NFIP claims and policy datasets, using spark. The aim of the project is to utilise/analyse spark to handle the large dataset released by the NFIP and to produce loss cost model of the claims in a specific region. To allow us to be able to better predict the estimated minimum premium an insurer should charge for specific policies. 
+The National Flood Insurance Program is a US Government agency which provides insurance to flood prone areas in the US. The Flood market has recently been opened to the private market and the NFIP has recently provide their claims and policy information to the public. 
+
+This project analyses the NFIP claims and policy datasets, using spark and data bricks. The aim of the project is to utilise/analyse spark to handle the large dataset released by the NFIP and to produce loss cost model of the claims in a specific region. 
 
 ## Problem Statement
 
+The aim of the project is to use Spark, on Data Bricks cloud platform, to see if we can handle a large volume of claims and policy data from the NFIP and transform it to be able to predict the loss cost for a region. Being able to predict the loss cost will enable insurance companies to set a minimum premium for a  policy given certain characteristics.
 
 ## Metrics
 
+The GLMs were evaluated using two metrics, Root Mean Squared Error (RMSE) and R squared, on the test dataset.
 
 ## Analysis
+
+The analysis format of the dataset but also investigated the claims disturbtion. From analysising the claims dataset, the effects of Hurricane Sandy and its impact on NY state became very clear.
 
 
 ## Methodology
 
+* In order to perform the analysis, a lot of data preparation had to be performed beforehand. Firstly, I used spark to merge all of the NFIP policy data together and then cut the data by New York state.
+
+* From there, I analysed the data asking some general questions to understand the claims distribution and profitability of the portfolio.
+
+* Then I tranformed the datasets and merge them into a tabular form to be able to apply a loss cost model (frequency and severity model combined). 
+
+* I used a gamma model to measure the severity of the claims and a poission model to measure the frequency of the claims.
+
+* Lastly, I evalated the results using R squared and RSME metrics.
 
 ## Results
+
+* The results were quite off, this is mainly due to the fact that we did not remove the extreme event of Sandy from the datasets. This would have skewed are distribution to the right quite a bit and caused our model to over predict on lower claims and under predict on larger claims values.
+* To remedy this, you could remove the extreme event and try and only focus on the aggregate flood claims.
 
 
 ## Conclusions
 
+* Spark is extremely useful for handling large datasets
+* In particular if you need to model something in that dataset
+* As insurance datasets become more readily available, more and more data scientist will start to spark to analyse them in the industry
 
 
+
+### --------------------------------------------------
 # How run the analysis
 
 1. Run the get_data_script.py file (this will take awhile)
@@ -36,8 +59,8 @@ This project analyses the NFIP claims and policy datasets, using spark. The aim 
     1. pass arguement for the State you want to filter the datasets for
     2. for example: python data_prep_script.py NY
 4. Take the outputted files and upload them to databricks - claims and policies
-5. Run the analysis.py file
-    1. 
+    1. use the write_ notebooks to import the datasets into permanent storage in your databricks account
+5. Run the NFIP_Analysis notebook 
 
 ## Useful links
 
