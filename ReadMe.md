@@ -1,6 +1,9 @@
 # Spark Capstone Project: Flood Claims Analysis (NFIP Claims and Policy Datasets)
 *This analysis is part of the Udacity Data Science Nanodegree and is no reflection of my current employer*
 
+* [Medium Blog](https://medium.com/@magrathj/fema-publishes-nfip-claims-and-policy-data-6535f33f8c79)
+
+
 ## Project Overview
 
 The National Flood Insurance Program is a US Government agency which provides insurance to flood prone areas in the US. The Flood market has recently been opened to the private market and the NFIP has recently provide their claims and policy information to the public. 
